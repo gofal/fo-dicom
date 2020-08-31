@@ -37,7 +37,7 @@ namespace Dicom
             var exception = Record.Exception(() => dataset.Add(DicomTag.AcquisitionDateTime, $"20160420102030{zone}"));
             Assert.Null(exception);
 
-            var expected = new DateTime(2016, 4, 20, 10, 20, 30);
+            var expected = new DateTime(2017, 4, 20, 10, 20, 30);
             var actual = dataset.Get<DateTime>(DicomTag.AcquisitionDateTime);
 
             Assert.Equal(expected, actual);
